@@ -1,0 +1,618 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>English Wonderland – Grade 5</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: one centred phone-width column; home = cover + 2×2 unit cards; unit = sticky tabs + one activity card */
+:root{
+  --bg:#fff8ee;--dot:#f3dfbf;--card:#ffffff;--card2:#fffaf2;--ink:#26304f;--soft:#646b8a;--line:#eedfc8;
+  --ok:#1b9a6c;--okbg:#dff8ec;--bad:#d9405a;--gold:#f2b52a;--goldbg:#fff4cc;--goldink:#5b4300;
+  --red:#c1272d;--green:#2a9d6f;
+  --fd:"Comic Sans MS","Comic Neue","Chalkboard SE",cursive;
+  --far:"Tajawal","Segoe UI",Tahoma,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#161b30;--dot:#232a48;--card:#1f2644;--card2:#252d50;--ink:#eef1ff;--soft:#aeb4d4;--line:#0f1428;
+  --ok:#4fd6a3;--okbg:#173f33;--bad:#ff7d91;--goldbg:#3d3418;--goldink:#ffe08a;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#161b30;--dot:#232a48;--card:#1f2644;--card2:#252d50;--ink:#eef1ff;--soft:#aeb4d4;--line:#0f1428;
+  --ok:#4fd6a3;--okbg:#173f33;--bad:#ff7d91;--goldbg:#3d3418;--goldink:#ffe08a;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:var(--fd);color:var(--ink);background:var(--bg);
+  background-image:radial-gradient(var(--dot) 2px,transparent 2px);background-size:26px 26px;font-size:16px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+button{font-family:inherit;color:inherit;cursor:pointer;border:0;background:none;font-size:inherit}
+input{font-family:inherit}
+:focus-visible{outline:3px solid #ff5c8a;outline-offset:2px;border-radius:10px}
+.ar{font-family:var(--far);direction:rtl;unicode-bidi:isolate}
+.wrap{max-width:600px;margin:0 auto;padding-block:8px 30px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--card);border-radius:16px;padding:8px 12px;box-shadow:0 3px 0 var(--line);position:sticky;top:calc(6px + env(safe-area-inset-top,0px));z-index:20}
+.brand{font-weight:700;font-size:17px}
+.brand b{color:var(--red)}
+.starbox{font-weight:700;background:var(--goldbg);color:var(--goldink);border:2px solid var(--gold);border-radius:99px;padding:3px 11px;white-space:nowrap}
+.starbox.pop{animation:pop .5s}
+@keyframes pop{50%{transform:scale(1.3)}}
+.band{height:10px;border-radius:6px;margin:10px 0 0;background:linear-gradient(90deg,var(--red) 0 33%,#fff 33% 66%,var(--green) 66%)}
+
+.cover{margin-top:10px;background:var(--card);border-radius:28px;border:4px solid var(--gold);box-shadow:0 6px 0 var(--line);padding:18px 14px;text-align:center}
+.cover .badges{display:flex;justify-content:center;gap:10px;font-size:40px;line-height:1}
+.cover h1{font-size:36px;margin:10px 0 0;line-height:1.05;text-wrap:balance}
+.cover h1 span{color:var(--red)}
+.cover .sub{font-weight:700;font-size:18px;color:var(--soft);margin-top:4px}
+.cover .subar{font-size:15px;color:var(--soft);margin-top:2px}
+.cover .by{display:inline-block;margin-top:12px;background:var(--green);color:#fff;font-weight:700;border-radius:99px;padding:6px 16px}
+
+.box{background:var(--card);border-radius:22px;padding:12px 14px;margin:14px 0;box-shadow:0 4px 0 var(--line)}
+details summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:8px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"＋";color:var(--red)}
+details[open] summary::after{content:"－"}
+.howto{text-align:right;line-height:1.8;font-size:15.5px;margin-top:6px}
+.howto p{margin:4px 0}
+
+h2.sec{font-size:22px;margin:16px 4px 8px}
+h2.sec .ar{font-size:15px;color:var(--soft);font-weight:500}
+.units{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ucard{--uc:#888;background:var(--card);border-radius:24px;padding:14px 8px 12px;text-align:center;border:3px solid var(--uc);box-shadow:0 5px 0 var(--uc);position:relative}
+.ucard:active{transform:translateY(3px);box-shadow:0 2px 0 var(--uc)}
+.ucard .num{font-weight:700;color:#fff;background:var(--uc);border-radius:99px;padding:2px 12px;font-size:14px;display:inline-block}
+.ucard .em{font-size:46px;line-height:1.25;margin-top:6px}
+.ucard .nm{font-weight:700;font-size:19px;color:var(--uc);line-height:1.15}
+.ucard .nmar{font-size:14px;color:var(--soft)}
+.ucard .done{position:absolute;top:-12px;right:-6px;font-size:30px}
+
+.uhead{margin-top:12px;display:flex;align-items:center;gap:10px}
+.back{background:var(--card);border-radius:14px;width:44px;height:44px;font-size:22px;box-shadow:0 3px 0 var(--line);flex:none}
+.uhead .tt{font-weight:700;font-size:21px;line-height:1.1;min-width:0}
+.uhead .tt small{display:block;font-size:14px;color:var(--uc)}
+.uhead .tt .ar{font-size:14px;color:var(--soft);font-weight:500}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 2px 8px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;background:var(--card);border-radius:99px;padding:7px 12px;font-weight:700;font-size:14.5px;box-shadow:0 3px 0 var(--line);white-space:nowrap}
+.tabs button.on{background:var(--uc);color:#fff;box-shadow:0 3px 0 rgba(0,0,0,.2)}
+.page{background:var(--card);border-radius:26px;padding:16px 14px 18px;box-shadow:0 6px 0 var(--line);min-height:300px;animation:in .3s}
+@keyframes in{from{opacity:.4;transform:translateY(6px)}}
+@media (prefers-reduced-motion: reduce){.page,.conf,.toast,.starbox.pop,.shake,.speaker,.slot.f{animation:none!important}}
+.ptitle{font-weight:700;font-size:21px;margin:0 0 2px}
+.inst{color:var(--soft);font-size:15px;margin:0 0 12px}
+.inst .ar{display:block;font-size:14.5px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.btn{font-weight:700;font-size:16px;border-radius:16px;padding:10px 16px;background:var(--uc);color:#fff;box-shadow:0 4px 0 rgba(0,0,0,.22)}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.2)}
+.btn.ghost{background:var(--card2);color:var(--ink);box-shadow:0 4px 0 var(--line);border:2px solid var(--line)}
+
+.ghead{font-weight:700;font-size:18px;margin:14px 0 8px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.ghead .ar{font-size:15px;color:var(--soft);font-weight:500}
+.wgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.wcard{display:flex;align-items:center;gap:8px;background:color-mix(in srgb,var(--uc) 13%,var(--card));border-radius:16px;padding:8px 10px;text-align:left;min-width:0}
+.wcard .e{font-size:28px;flex:none;width:36px;text-align:center}
+.wcard .t{min-width:0}
+.wcard .w{font-weight:700;font-size:16.5px;line-height:1.2;display:block}
+.wcard .m{font-size:14px;color:var(--soft);display:block;margin-top:2px}
+.wcard.hl{outline:3px solid var(--gold)}
+
+.flash{perspective:900px;margin:6px auto 12px;max-width:340px}
+.fcard{position:relative;display:block;width:100%;aspect-ratio:4/3.2;max-width:100%;transform-style:preserve-3d;transition:transform .5s}
+.fcard.flip{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:4px solid var(--uc);background:var(--card);box-shadow:0 6px 0 rgba(0,0,0,.12);padding:12px}
+.face.b{transform:rotateY(180deg);background:color-mix(in srgb,var(--uc) 13%,var(--card))}
+.face .e{font-size:74px;line-height:1}
+.face .w{font-weight:700;font-size:30px;text-align:center;line-height:1.1}
+.face .m{font-size:30px;font-weight:700;text-align:center}
+.face .hint{font-size:13px;color:var(--soft)}
+.fcount{font-weight:700;color:var(--soft)}
+
+.gmenu{display:grid;gap:10px}
+.gbtn{display:flex;align-items:center;gap:12px;background:color-mix(in srgb,var(--uc) 12%,var(--card));border-radius:20px;padding:12px;text-align:left}
+.gbtn .i{font-size:34px}
+.gbtn b{font-size:18px;display:block}
+.gbtn span{font-size:14px;color:var(--soft)}
+.dots{display:flex;gap:6px;justify-content:center;margin:2px 0 10px;flex-wrap:wrap}
+.dots i{width:12px;height:12px;border-radius:50%;background:var(--line)}
+.dots i.on{background:var(--uc)}.dots i.ok{background:var(--ok)}.dots i.no{background:var(--bad)}
+.speaker{display:block;margin:6px auto 12px;font-size:44px;background:color-mix(in srgb,var(--uc) 15%,var(--card));width:92px;height:92px;border-radius:50%;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{transform:scale(1.06)}}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.opts.col{grid-template-columns:1fr}
+.opt{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:8px;box-shadow:0 4px 0 var(--line);font-size:44px;aspect-ratio:1/1;max-width:100%;display:grid;place-items:center}
+.opt.txt{font-size:19px;font-weight:700;aspect-ratio:auto;padding:12px 8px}
+.opt.good,.qopt.good{border-color:var(--ok);background:var(--okbg);box-shadow:0 4px 0 var(--ok)}
+.opt.no,.qopt.no{border-color:var(--bad)}
+.shake{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}
+.gpic{font-size:74px;text-align:center;line-height:1.1}
+.gword{text-align:center;font-weight:700;font-size:30px;margin:4px 0 12px;color:var(--uc)}
+.gmean{text-align:center;font-size:19px;color:var(--soft);margin-bottom:6px}
+.slots{display:flex;justify-content:center;gap:5px;margin:10px 0 16px;flex-wrap:wrap}
+.slot{min-width:34px;height:46px;border-radius:12px;border:3px dashed var(--line);display:grid;place-items:center;font-size:23px;font-weight:700;background:var(--card2);padding:0 5px}
+.slot.f{border-style:solid;border-color:var(--uc);color:var(--uc);animation:pop .3s}
+.pool{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.ptile{min-width:46px;height:50px;padding:0 10px;border-radius:14px;font-size:23px;font-weight:700;background:var(--card);border:3px solid var(--line);box-shadow:0 4px 0 var(--line)}
+.ptile.used{visibility:hidden}
+.win{text-align:center;padding:10px}
+.win .big{font-size:64px}
+.win h3{font-size:25px;margin:6px 0}
+
+.rule{background:color-mix(in srgb,var(--uc) 12%,var(--card));border-radius:20px;padding:12px 14px;margin-bottom:12px}
+.rule h4{font-size:19px;margin:0 0 6px}
+.rule .ar{text-align:right;display:block;line-height:1.75;font-size:15.5px}
+.ex{background:var(--card);border-radius:14px;padding:8px 12px;margin-top:8px;font-weight:700;font-size:16.5px;display:flex;gap:8px;align-items:center;justify-content:space-between}
+.ex button{font-size:20px;flex:none}
+.gq{border:2px solid var(--line);border-radius:18px;padding:10px 12px;margin-bottom:10px;background:var(--card2)}
+.gq p{margin:0 0 8px;font-size:17.5px;font-weight:700;line-height:1.45}
+.gap{display:inline-block;min-width:56px;border-bottom:3px solid var(--uc);text-align:center;color:var(--uc)}
+.bub{display:flex;gap:8px;flex-wrap:wrap}
+.qopt{background:var(--card);border:3px solid var(--line);border-radius:14px;padding:6px 12px;font-size:16.5px;font-weight:700;box-shadow:0 3px 0 var(--line)}
+.gscore{text-align:center;font-weight:700;font-size:19px;margin-top:6px}
+
+.phr{display:flex;gap:10px;align-items:center;background:color-mix(in srgb,var(--uc) 10%,var(--card));border-radius:16px;padding:9px 12px;margin-bottom:8px}
+.phr button{font-size:24px;flex:none}
+.phr .t{min-width:0}
+.phr b{display:block;font-size:17px}
+.phr span{display:block;font-size:14.5px;color:var(--soft)}
+
+.cert{margin-top:14px;border:6px double var(--gold);border-radius:22px;padding:18px 14px;text-align:center;background:#fffbe8;color:#26304f}
+.cert .st{font-size:30px;letter-spacing:4px}
+.cert h3{font-size:25px;margin:4px 0;color:#c1272d}
+.cert .nm{font-size:28px;font-weight:700;border-bottom:2px dashed #c9b27a;display:inline-block;min-width:60%;margin:6px 0;padding-bottom:2px}
+.cert .ar{display:block;font-size:16px;margin:2px 0 4px}
+.cert .sig{font-weight:700;margin-top:10px}
+.field{width:100%;font-size:18px;padding:10px 12px;border-radius:14px;border:2px solid var(--line);background:var(--card2);color:var(--ink)}
+
+.nmb{font-family:var(--fd);font-weight:700;color:var(--uc);font-size:.5em;line-height:1;white-space:nowrap}
+.wcard .e .nmb{font-size:14px}
+.wcard .e:has(.nmb){width:auto;min-width:36px}
+footer{text-align:center;margin-top:20px;font-size:14px;color:var(--soft)}
+footer .tn{font-weight:700;color:var(--ink);font-size:17px}
+footer button{font-size:12px;background:var(--card);border-radius:99px;padding:4px 10px;box-shadow:0 2px 0 var(--line);color:var(--soft);margin-top:8px}
+.conf{position:fixed;top:-20px;font-size:22px;pointer-events:none;z-index:99;animation:fall 1.6s ease-in forwards}
+@keyframes fall{to{transform:translateY(105vh) rotate(540deg);opacity:.6}}
+.toast{position:fixed;left:50%;top:40%;transform:translate(-50%,-50%);font-weight:700;font-size:32px;color:#fff;background:var(--ok);padding:12px 26px;border-radius:24px;z-index:98;animation:toast 1s forwards;pointer-events:none}
+@keyframes toast{0%{transform:translate(-50%,-50%) scale(.5);opacity:0}20%{transform:translate(-50%,-50%) scale(1.1);opacity:1}80%{opacity:1}100%{opacity:0}}
+@media (max-width:370px){.wgrid{grid-template-columns:1fr}.cover h1{font-size:30px}.opt{font-size:36px}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">English <b>Wonderland</b> 🌈 5</div>
+    <div class="starbox" id="stars">⭐ 0</div>
+  </header>
+  <div class="band"></div>
+  <main id="app"></main>
+  <footer>
+    <div class="tn">T. Laila Al Shamsi</div>
+    <div class="ar">المعلمة ليلى الشمسي</div>
+    <div>English for Oman · Grade 5</div>
+    <button data-a="reset">Reset stars</button>
+  </footer>
+</div>
+
+<script>
+const UNITS=[
+{key:'u1',num:'Unit 1',name:'Talent Show',ar:'عرض المواهب',em:'🎭',col:'#2e9a68',
+ groups:[
+  {t:'Hair and looks',ar:'الشعر والمظهر',w:[
+   ['curly hair','شعر مجعّد','👩‍🦱'],['straight hair','شعر ناعم (مستقيم)','💇‍♀️'],['dark hair','شعر داكن','🧑‍🦱'],['fair hair','شعر أشقر','👱‍♀️'],
+   ['long hair','شعر طويل','🧜‍♀️'],['short hair','شعر قصير','🧑'],['a beard','لحية','🧔'],['a moustache','شارب','👨']]},
+  {t:'Character',ar:'الشخصية',w:[
+   ['shy','خجول','😳'],['confident','واثق من نفسه','😎'],['lazy','كسول','😴'],['hard-working','مجتهد','💪'],
+   ['friendly','ودود','😊'],['unfriendly','غير ودود','😒'],['kind','لطيف','🤗'],['mean','قاسٍ','😠'],
+   ['polite','مهذّب','🙏'],['rude','وقح','😤'],['tidy','مرتّب','🧹'],['untidy','غير مرتّب','🗑️']]},
+  {t:'Talents',ar:'المواهب',w:[
+   ['juggle','يلعب بالكرات (يشعوِذ)','🤹'],['fix toys','يصلح الألعاب','🧸'],['bake a cake','يخبز كعكة','🎂'],['make a pizza','يصنع بيتزا','🍕'],
+   ['do experiments','يجري تجارب','🧪'],['throw a ball','يرمي الكرة','⚾'],['circus','سيرك','🎪'],['chess','شطرنج','♟️']]}],
+ rules:[
+  {h:'before & after',ar:'before = قبل &nbsp; after = بعد<br>الفعل الأول يحدث أولًا، ثم الفعل الثاني.',
+   ex:["I brushed my teeth before I went to bed.","I ate dinner after I washed my hands.","He called his friend before he went to the gym."]},
+  {h:'and / or / but / because / so',ar:'and = و &nbsp; or = أو &nbsp; but = لكن<br>because = لأن (السبب) &nbsp; so = لذا (النتيجة)',
+   ex:["I like pizza, but I don't like burgers.","I stayed home because it was raining.","It was raining, so I stayed home."]},
+  {h:'Time words and good at',ar:'on + يوم / تاريخ &nbsp; in + شهر / سنة &nbsp; at + ساعة<br>good at / great at / terrible at + فعل-ing',
+   ex:["I didn't go to school on Monday.","She will travel to Paris in April.","I am great at playing chess."]}],
+ gq:[
+  ["I brushed my teeth ___ I went to bed.",['before','after'],0],
+  ["I ate dinner ___ I washed my hands.",['after','before'],0],
+  ["I like pizza, ___ I don't like burgers.",['but','because','or'],0],
+  ["I stayed home ___ it was raining.",['because','so','but'],0],
+  ["It was raining, ___ I stayed home.",['so','because','or'],0],
+  ["Do you want tea ___ juice?",['or','and','so'],0],
+  ["I was born ___ 12th June.",['on','in','at'],0],
+  ["I finish school ___ 2:00.",['at','on','in'],0]],
+ phr:{t:'Talking about talents',ar:'الحديث عن المواهب',list:[
+  ["I'm great at playing chess.",'أنا بارع في لعب الشطرنج.'],
+  ['She is good at cooking.','هي جيدة في الطبخ.'],
+  ["He's not very good at swimming.",'هو ليس جيدًا جدًا في السباحة.'],
+  ["I'm terrible at playing football.",'أنا سيئ جدًا في لعب كرة القدم.'],
+  ['I felt happy when I saw my friends.','شعرت بالسعادة عندما رأيت أصدقائي.']]}},
+
+{key:'u2',num:'Unit 2',name:'Then & Now',ar:'ثم والآن',em:'⏳',col:'#e86a1f',
+ groups:[
+  {t:'Technology',ar:'التكنولوجيا',w:[
+   ['computer','حاسوب','🖥️'],['keyboard','لوحة المفاتيح','⌨️'],['mouse','فأرة','🖱️'],['tablet','جهاز لوحي','📲'],
+   ['email','بريد إلكتروني','📧'],['letter','رسالة','✉️'],['telephone','هاتف','☎️'],['CD player','مشغّل أقراص','📀'],
+   ['electricity','كهرباء','🔌'],['photographs','صور','📷']]},
+  {t:'Things I could do',ar:'أشياء كنت أستطيع فعلها',w:[
+   ['post a letter','يرسل رسالة بالبريد','📮'],['send an email','يرسل بريدًا إلكترونيًا','💌'],['make a face','يصنع وجهًا مضحكًا','😝'],['tell a story','يحكي قصة','📖'],
+   ['hold a pen','يمسك قلمًا','🖊️'],['win a race','يفوز بسباق','🏁'],['make a sandwich','يصنع شطيرة','🥪'],['tie a shoelace','يربط رباط الحذاء','👟'],
+   ['carry','يحمل','📦'],['study','يدرس','📚']]},
+  {t:'Museum and history',ar:'المتحف والتاريخ',w:[
+   ['museum','متحف','🏛️'],['ancient tools','أدوات قديمة','🏺'],['coins','عملات معدنية','🪙'],['sword','سيف','⚔️'],
+   ['mummy','مومياء','🧟'],['statue','تمثال','🗿'],['jewellery','مجوهرات','💍'],['inventions','اختراعات','💡']]}],
+ rules:[
+  {h:'Past simple',ar:'نستخدمه للأحداث التي حدثت في الماضي.<br>فعل منتظم: فعل + ed (walk → walked)<br>فعل شاذ: يتغير شكله (buy → bought, run → ran, write → wrote)<br>النفي: didn\'t + الفعل الأصلي &nbsp; السؤال: Did + الفاعل + الفعل',
+   ex:["She walked to the store.","He bought a new phone yesterday.","She didn't walk to school yesterday.","Did she call you yesterday?"]},
+  {h:'can / can\'t and could / couldn\'t',ar:'can / can\'t = أستطيع / لا أستطيع (الآن)<br>could / couldn\'t = كنت أستطيع / لم أكن أستطيع (في الماضي)',
+   ex:["I can make a pizza.","I can't speak Japanese.","I could win a race when I was five.","I couldn't tie my shoelace."]}],
+ gq:[
+  ["She ___ to the store yesterday.",['walked','walk','walks'],0],
+  ["He ___ a new phone yesterday.",['bought','buy','buyed'],0],
+  ["The dog ___ across the field.",['ran','run','runned'],0],
+  ["They ___ finish their homework on time.",["didn't","don't","doesn't"],0],
+  ["___ she call you yesterday?",['Did','Do','Does'],0],
+  ["Where ___ you go yesterday?",['did','do','are'],0],
+  ["When I was five, I ___ tie my shoelace.",["couldn't","can't","can"],0],
+  ["Now, I ___ play basketball.",['can','could','did'],0]],
+ phr:{t:'Writing an email',ar:'كتابة رسالة إلكترونية',list:[
+  ['How are you? I hope you are fine.','كيف حالك؟ أتمنى أن تكون بخير.'],
+  ['I am writing this email to tell you about my best friend.','أكتب لك هذه الرسالة لأخبرك عن صديقي المفضل.'],
+  ['I visited the Natural History Museum of Oman.','زرت متحف التاريخ الطبيعي في عُمان.'],
+  ['I learnt a lot about our amazing country.','تعلّمت الكثير عن بلدنا الرائع.'],
+  ['Can you tell me about your best friend?','هل يمكنك أن تخبرني عن صديقك المفضل؟'],
+  ['See you soon.','أراك قريبًا.']]}},
+
+{key:'u3',num:'Unit 3',name:"Let's Explore",ar:'لنستكشف',em:'🚀',col:'#8257cf',
+ groups:[
+  {t:'Space',ar:'الفضاء',w:[
+   ['sun','شمس','☀️'],['planet','كوكب','🪐'],['solar system','المجموعة الشمسية','🌌'],['star','نجمة','⭐'],
+   ['Earth','الأرض','🌍'],['moon','قمر','🌙'],['rocket','صاروخ','🚀'],['spacesuit','بدلة فضاء','👨‍🚀'],
+   ['comet','مذنّب','☄️'],['telescope','تلسكوب','🔭'],['satellite','قمر صناعي','🛰️'],['astronaut','رائد فضاء','🧑‍🚀']]},
+  {t:'Science fair',ar:'معرض العلوم',w:[
+   ['science fair','معرض العلوم','🔬'],['float','يطفو','🎈'],['weightless','عديم الوزن','🪶'],['break','يكسر','🔨'],
+   ['challenge','تحدٍّ','🧗'],['straw','قشّة','🥤'],['sky','سماء','🌤️'],['medal','ميدالية','🥇'],['first prize','الجائزة الأولى','🏅']]},
+  {t:'Oman and the body',ar:'عُمان والجسم',w:[
+   ['frankincense','لبان','🌿'],['perfume','عطر','🧴'],['medicine','دواء','💊'],['heart','قلب','❤️'],
+   ['breathe','يتنفّس','🌬️'],['grow','ينمو','🌱'],['port','ميناء','⚓'],['fort','قلعة','🏰'],
+   ['smell','يشمّ','👃'],['muscles','عضلات','💪'],['exercise','يتمرّن','🏋️'],['explorer','مستكشف','🧭']]}],
+ rules:[
+  {h:'Simple future: will / won\'t',ar:'نستخدمه للأحداث في المستقبل.<br>will + الفعل &nbsp; النفي: won\'t + الفعل<br>سؤال: Will + الفاعل + الفعل؟ &nbsp; WH + will + الفاعل + الفعل؟',
+   ex:["I will go to the park tomorrow morning.","She won't read a book after lunch.","Will we play football next Saturday?","When will you go to the park?"]},
+  {h:'How questions',ar:'How tall = كم الطول (شخص) &nbsp; How high = كم الارتفاع<br>How far = كم المسافة &nbsp; How deep = كم العمق<br>How long = كم الطول (طريق، نهر) &nbsp; How wide = كم العرض',
+   ex:["How tall is your brother?","How high is that mountain?","How far is the moon from Earth?","How long is the River Nile?"]}],
+ gq:[
+  ["I ___ go to the park tomorrow morning.",['will','did','am'],0],
+  ["She ___ read a book after lunch.",['will','is','did'],0],
+  ["She won't ___ a book after lunch.",['read','reads','reading'],0],
+  ["___ you go to the park tomorrow?",['Will','Did','Are'],0],
+  ["How ___ is your brother?",['tall','far','deep'],0],
+  ["How ___ is the sea at this point?",['deep','tall','far'],0],
+  ["How ___ is the moon from Earth?",['far','wide','tall'],0],
+  ["How ___ is the River Nile?",['long','high','deep'],0]],
+ phr:{t:'Writing a blog',ar:'كتابة مدوّنة',list:[
+  ['My blog post today is about the food we eat on the ISS.','موضوع مدوّنتي اليوم هو الطعام الذي نأكله في محطة الفضاء.'],
+  ["We don't cook in space because there is no gravity.",'لا نطبخ في الفضاء لأنه لا توجد جاذبية.'],
+  ['Did you know that astronauts exercise for two hours every day?','هل تعلم أن رواد الفضاء يتمرنون ساعتين كل يوم؟'],
+  ['It is not different to what many people do on Earth.','لا يختلف عمّا يفعله كثير من الناس على الأرض.'],
+  ['That is different to Earth!','هذا يختلف عن الأرض!']]}},
+
+{key:'u4',num:'Unit 4',name:'Off to the Shops',ar:'إلى المتاجر',em:'🛍️',col:'#d9466f',
+ groups:[
+  {t:'Shops',ar:'المتاجر',w:[
+   ["butcher's",'محل الجزّار','🥩'],["greengrocer's",'محل الخضار والفواكه','🥦'],["fishmonger's",'محل السمك','🐟'],['pharmacy','صيدلية','⚕️'],
+   ['phone shop','محل هواتف','📱'],['toy shop','محل ألعاب','🧸'],['kiosk','كشك','📰'],["jeweller's",'محل مجوهرات','💍'],
+   ['shoe shop','محل أحذية','👞'],['corner shop','بقالة','🏪'],['sports shop','محل رياضة','⚽'],['gift shop','محل هدايا','🎁'],['shopping mall','مركز تسوّق','🏬']]},
+  {t:'Things to buy',ar:'أشياء نشتريها',w:[
+   ['medicine','دواء','💊'],['newspapers','صحف','🗞️'],['magazines','مجلات','📔'],['meat','لحم','🍖'],
+   ['necklace','قلادة','📿'],['sandals','صنادل','🩴'],['doll','دمية','🪆'],['phone case','غطاء هاتف','📲'],
+   ['trainers','حذاء رياضي','👟'],['boots','حذاء طويل (بوت)','🥾'],['hat','قبعة','👒'],['dates','تمر','🌴'],
+   ['stationery','قرطاسية','✏️'],['birthday card','بطاقة عيد ميلاد','🎂'],['sweets','حلويات','🍬']]},
+  {t:'Money and shopping',ar:'المال والتسوّق',w:[
+   ['money box','حصّالة','🐷'],['purse','محفظة نقود صغيرة','👛'],['wallet','محفظة','💼'],['get pocket money','يحصل على مصروف','🤲'],
+   ['spend','ينفق','💸'],['save','يدّخر','🏦'],['buy','يشتري','🛍️'],['sell','يبيع','🏷️'],
+   ['steal','يسرق','🥷'],['thief','لص','🦹'],['try on','يجرّب (ملابس)','🪞'],['shop assistant','موظف المحل','🙋'],['escalator','سلّم متحرك','🛗']]}],
+ rules:[
+  {h:'Relative pronouns: who / which / where',ar:'who = للأشخاص &nbsp; which = للأشياء والحيوانات &nbsp; where = للأماكن<br>نستخدمها لربط جملتين وإضافة معلومات.',
+   ex:["The man who is standing there is my uncle.","The book which I borrowed is very interesting.","This is the house where I grew up."]},
+  {h:'have to',ar:'للتعبير عن الضرورة أو الوجوب.<br>I / you / we / they + have to &nbsp; he / she / it + has to<br>النفي: don\'t / doesn\'t have to (ليس مجبرًا)<br>السؤال: Do / Does + الفاعل + have to؟',
+   ex:["I have to do my homework.","He has to wake up early.","We don't have to run fast.","Does she have to sleep early?"]}],
+ gq:[
+  ["The man ___ is standing there is my uncle.",['who','which','where'],0],
+  ["The book ___ I borrowed is very interesting.",['which','who','where'],0],
+  ["This is the house ___ I grew up.",['where','who','which'],0],
+  ["I ___ do my homework.",['have to','has to','having to'],0],
+  ["He ___ wake up early.",['has to','have to','having to'],0],
+  ["I ___ have to eat breakfast.",["don't","doesn't","didn't"],0],
+  ["He ___ have to go to school.",["doesn't","don't","isn't"],0],
+  ["___ she have to sleep early?",['Does','Do','Is'],0]],
+ phr:{t:'Shopping advice',ar:'نصائح للتسوّق',list:[
+  ['You asked for some advice about great shops to visit in my town.','طلبتِ نصيحة عن متاجر رائعة لزيارتها في مدينتي.'],
+  ['In the toy shop, you can buy a doll.','في محل الألعاب يمكنك شراء دمية.'],
+  ['There is a phone shop where you can see different phones.','هناك محل هواتف حيث ترين هواتف مختلفة.'],
+  ['My favourite shop is the toy shop.','محلي المفضل هو محل الألعاب.'],
+  ['Remember to bring your pocket money!','تذكّري أن تحضري مصروفك!']]}}
+];
+
+const TABS=[['words','📘 Words'],['cards','🃏 Flashcards'],['games','🎮 Games'],['grammar','✏️ Grammar'],['phrases','💬 Phrases'],['challenge','🏆 Challenge']];
+let S={view:'home',u:0,tab:'words'};
+let stars=0,done={},sname='';
+try{const d=JSON.parse(localStorage.getItem('eia5')||'{}');stars=d.stars||0;done=d.done||{};sname=d.name||''}catch(e){}
+function save(){try{localStorage.setItem('eia5',JSON.stringify({stars,done,name:sname}))}catch(e){}}
+const app=document.getElementById('app');
+const U=()=>UNITS[S.u];
+const words=u=>u.groups.flatMap(g=>g.w);
+const ic=e=>/^[\d,]+$/.test(e)?`<span class="nmb">${e}</span>`:e;
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+UNITS.forEach(u=>{u.gq=u.gq.map(q=>{const a=q[1][q[2]],o=shuffle(q[1]);return[q[0],o,o.indexOf(a)]})});
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* speech */
+let voice=null;
+function pickVoice(){try{const v=speechSynthesis.getVoices();voice=v.find(x=>/en-GB/i.test(x.lang))||v.find(x=>/^en/i.test(x.lang))||null}catch(e){}}
+try{pickVoice();speechSynthesis.onvoiceschanged=pickVoice}catch(e){}
+function say(t,cb){
+  let fired=false;const fin=()=>{if(!fired){fired=true;cb&&cb()}};
+  try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=.82;if(voice)u.voice=voice;u.onend=fin;u.onerror=fin;speechSynthesis.speak(u)}catch(e){}
+  if(cb)setTimeout(fin,Math.max(2200,t.length*120));
+}
+
+/* stars & fx */
+function addStar(n=1){stars+=n;save();const b=document.getElementById('stars');b.textContent='⭐ '+stars;b.classList.remove('pop');void b.offsetWidth;b.classList.add('pop')}
+function toast(t){const d=document.createElement('div');d.className='toast';d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),1000)}
+function confetti(){if(reduced)return;for(let i=0;i<24;i++){const c=document.createElement('div');c.className='conf';c.textContent=['⭐','🎉','🌟','💙'][i%4];c.style.left=Math.random()*100+'vw';c.style.animationDelay=Math.random()*.5+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),2300)}}
+function shake(el){el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake')}
+const PRAISE=['Great!','Well done!','Super!','Excellent!','Brilliant!'];
+const praise=()=>PRAISE[Math.floor(Math.random()*PRAISE.length)];
+
+/* ---------- views ---------- */
+function render(){
+  stopAll();
+  document.getElementById('stars').textContent='⭐ '+stars;
+  if(S.view==='home')return home();
+  const u=U();
+  app.style.setProperty('--uc',u.col);
+  app.innerHTML=`<div class="uhead"><button class="back" data-a="home" aria-label="Back to units">←</button>
+   <div class="tt"><small>${u.num}</small>${u.em} ${u.name} <span class="ar">${u.ar}</span></div></div>
+   <nav class="tabs">${TABS.map(([k,l])=>`<button data-a="tab" data-t="${k}" class="${S.tab===k?'on':''}">${l}</button>`).join('')}</nav>
+   <section class="page" id="page"></section>`;
+  ({words:pWords,cards:pCards,games:pGames,grammar:pGrammar,phrases:pPhrases,challenge:pChallenge})[S.tab]();
+  const on=app.querySelector('.tabs .on');on&&on.scrollIntoView({inline:'center',block:'nearest'});
+}
+function home(){
+  app.style.removeProperty('--uc');
+  app.innerHTML=`<div class="cover">
+    <div class="badges">🎭 ⏳ 🚀 🛍️</div>
+    <h1>English <span>Wonderland</span> 🌈</h1>
+    <div class="sub">Grade 5</div>
+    <div class="subar ar">الصف الخامس</div>
+    <div class="by">T. Laila Al Shamsi</div></div>
+   <details class="box"><summary><span class="ar">كيف تستخدمين التطبيق؟</span></summary>
+    <div class="howto ar">
+     <p>📘 <b>Words:</b> اضغطي على الكلمة لتسمعي نطقها، أو اضغطي <b>Listen &amp; say</b> لتسمعي كل الكلمات وتردّديها.</p>
+     <p>🃏 <b>Flashcards:</b> اقلبي البطاقة لتري المعنى.</p>
+     <p>🎮 <b>Games:</b> استمعي واختاري، تهجّي الكلمة، وطابقي المعنى.</p>
+     <p>✏️ <b>Grammar:</b> القاعدة بالعربي مع أمثلة وتدريب.</p>
+     <p>💬 <b>Phrases:</b> عبارات مفيدة للمحادثة.</p>
+     <p>⭐ اجمعي النجوم في كل لعبة وتدريب!</p>
+     <p>🏆 <b>Challenge:</b> أجيبي 8 من 10 لتحصلي على شهادة الوحدة.</p>
+    </div></details>
+   <h2 class="sec">Choose a unit <span class="ar">اختاري الوحدة</span></h2>
+   <div class="units">${UNITS.map((u,i)=>`<button class="ucard" style="--uc:${u.col}" data-a="open" data-u="${i}">
+     ${done[u.key]?'<span class="done" aria-label="Certificate earned">🏅</span>':''}
+     <span class="num">${u.num}</span><div class="em">${u.em}</div>
+     <div class="nm">${u.name}</div><div class="nmar ar">${u.ar}</div></button>`).join('')}</div>`;
+}
+const page=()=>document.getElementById('page');
+
+function pWords(){
+  const u=U();let k=0;
+  page().innerHTML=`<div class="row"><h3 class="ptitle">Listen and say</h3>
+    <button class="btn" id="playall" data-a="playall">▶ Listen &amp; say</button></div>
+   <p class="inst">Tap a word. Listen and say it. <span class="ar">اضغطي على الكلمة، استمعي ثم ردّديها.</span></p>
+   ${u.groups.map(g=>`<div class="ghead">${g.t} <span class="ar">${g.ar}</span></div>
+     <div class="wgrid">${g.w.map(w=>`<button class="wcard" id="w${k}" data-a="sayw" data-i="${k++}">
+       <span class="e">${ic(w[2])}</span><span class="t"><span class="w">${w[0]}</span><span class="m ar">${w[1]}</span></span></button>`).join('')}</div>`).join('')}`;
+}
+let play=null;
+function stopAll(){if(play){clearTimeout(play.t);play=null}try{speechSynthesis.cancel()}catch(e){}
+  document.querySelectorAll('.wcard.hl').forEach(x=>x.classList.remove('hl'));const b=document.getElementById('playall');if(b)b.textContent='▶ Listen & say'}
+function playAll(){
+  if(play){stopAll();return}
+  const W=words(U());let i=0;play={};document.getElementById('playall').textContent='⏹ Stop';
+  const step=()=>{if(!play)return;document.querySelectorAll('.wcard.hl').forEach(x=>x.classList.remove('hl'));
+    if(i>=W.length){stopAll();return}
+    const el=document.getElementById('w'+i);el&&el.classList.add('hl');el&&el.scrollIntoView({block:'nearest',behavior:reduced?'auto':'smooth'});
+    say(W[i][0],()=>{if(!play)return;play.t=setTimeout(()=>{i++;step()},2300)})};
+  step();
+}
+
+let fc={i:0,list:[]};
+function pCards(){fc={i:0,list:shuffle(words(U()))};drawCard()}
+function drawCard(){
+  const w=fc.list[fc.i];
+  page().innerHTML=`<h3 class="ptitle">Flashcards</h3>
+   <p class="inst">Say the meaning, then flip the card. <span class="ar">قولي المعنى ثم اقلبي البطاقة.</span></p>
+   <div class="flash"><button class="fcard" id="fcard" data-a="flip" aria-label="Flip card">
+     <span class="face"><span class="e">${ic(w[2])}</span><span class="w">${w[0]}</span><span class="hint">tap to flip · اضغطي للقلب</span></span>
+     <span class="face b"><span class="e">${ic(w[2])}</span><span class="m ar">${w[1]}</span></span></button></div>
+   <div class="row"><button class="btn ghost" data-a="fprev">← Back</button><span class="fcount">${fc.i+1} / ${fc.list.length}</span>
+    <button class="btn ghost" data-a="sayt" data-t="${esc(w[0])}" aria-label="Listen">🔊</button><button class="btn" data-a="fnext">Next →</button></div>`;
+}
+
+/* games */
+let G=null;
+function pGames(){G=null;
+  page().innerHTML=`<h3 class="ptitle">Games</h3><p class="inst">Choose a game. Win a star for every right answer! <span class="ar">اختاري لعبة واربحي نجمة لكل إجابة صحيحة.</span></p>
+   <div class="gmenu">
+    <button class="gbtn" data-a="game" data-g="listen"><span class="i">👂</span><span><b>Listen and choose</b><span class="ar">استمعي واختاري الصورة</span></span></button>
+    <button class="gbtn" data-a="game" data-g="spell"><span class="i">🔤</span><span><b>Spell it</b><span class="ar">رتّبي الحروف لتكتبي الكلمة</span></span></button>
+    <button class="gbtn" data-a="game" data-g="mean"><span class="i">🧩</span><span><b>Match the meaning</b><span class="ar">اختاري المعنى الصحيح</span></span></button>
+   </div>`;
+}
+function pickOthers(pool,target,n){return shuffle(pool.filter(w=>w[0]!==target[0]&&w[2]!==target[2]&&w[1]!==target[1])).slice(0,n)}
+function startGame(type){
+  const all=words(U());let base=all;
+  if(type==='spell')base=all.filter(w=>/^[a-z]+$/.test(w[0])&&w[0].length<=10);
+  const rounds=shuffle(base).slice(0,6).map(t=>({t,opts:shuffle([t,...pickOthers(all,t,2)])}));
+  G={type,rounds,i:0,score:0,res:[]};drawRound();
+}
+function dots(n,i,res){return `<div class="dots">${Array.from({length:n},(_,k)=>`<i class="${res[k]===true?'ok':res[k]===false?'no':k===i?'on':''}"></i>`).join('')}</div>`}
+function drawRound(){
+  if(G.i>=G.rounds.length)return endGame();
+  const r=G.rounds[G.i],p=page();let h=dots(G.rounds.length,G.i,G.res);
+  if(G.type==='listen'){
+    h+=`<button class="speaker" data-a="sayt" data-t="${esc(r.t[0])}" aria-label="Listen again">🔊</button>
+     <p class="inst" style="text-align:center">Listen. Which picture is it? <span class="ar">استمعي. ما الصورة الصحيحة؟</span></p>
+     <div class="opts">${r.opts.map((o,k)=>`<button class="opt" data-a="ans" data-k="${k}" aria-label="${esc(o[0])}">${ic(o[2])}</button>`).join('')}</div>`;
+    p.innerHTML=h;say(r.t[0]);
+  }else if(G.type==='mean'){
+    h+=`<div class="gpic">${ic(r.t[2])}</div><div class="gword">${r.t[0]} <button data-a="sayt" data-t="${esc(r.t[0])}" aria-label="Listen">🔊</button></div>
+     <div class="opts col">${r.opts.map((o,k)=>`<button class="opt txt ar" data-a="ans" data-k="${k}">${o[1]}</button>`).join('')}</div>`;
+    p.innerHTML=h;say(r.t[0]);
+  }else{
+    const w=r.t[0];r.pos=0;r.miss=0;r.tiles=shuffle(w.split('').map((c,k)=>({c,k})));
+    h+=`<div class="gpic">${ic(r.t[2])}</div><div class="gmean ar">${r.t[1]}</div>
+     <div style="text-align:center"><button class="btn ghost" data-a="sayt" data-t="${esc(w)}">🔊 Listen</button></div>
+     <div class="slots">${w.split('').map((c,k)=>`<span class="slot" id="s${k}"></span>`).join('')}</div>
+     <div class="pool">${r.tiles.map((t,k)=>`<button class="ptile" id="t${k}" data-a="tile" data-k="${k}">${t.c}</button>`).join('')}</div>`;
+    p.innerHTML=h;
+  }
+}
+function answer(btn,k){
+  const r=G.rounds[G.i];if(r.done)return;
+  const ok=r.opts[k][0]===r.t[0];
+  if(ok){r.done=true;btn.classList.add('good');if(G.res[G.i]===undefined)G.res[G.i]=true;if(G.res[G.i])G.score++,addStar();toast(praise());say(r.t[0]);setTimeout(()=>{G.i++;drawRound()},1300)}
+  else{G.res[G.i]=false;btn.classList.add('no');shake(btn)}
+}
+function tile(btn,k){
+  const r=G.rounds[G.i],t=r.tiles[k],w=r.t[0];if(r.done)return;
+  if(t.c===w[r.pos]){btn.classList.add('used');const s=document.getElementById('s'+r.pos);s.textContent=t.c;s.classList.add('f');r.pos++;
+    if(r.pos===w.length){r.done=true;const ok=r.miss<3;G.res[G.i]=ok;if(ok){G.score++;addStar()}toast(praise());say(w);setTimeout(()=>{G.i++;drawRound()},1400)}}
+  else{r.miss++;shake(btn)}
+}
+function endGame(){
+  const n=G.rounds.length,s=G.score;
+  page().innerHTML=`<div class="win"><div class="big">${s>=5?'🏆':s>=3?'🌟':'💪'}</div><h3>${s} / ${n}</h3>
+   <p class="ar">${s>=5?'رائع! أحسنتِ':s>=3?'جيد جدًا! استمري':'حاولي مرة أخرى، ستنجحين!'}</p>
+   <div class="row" style="justify-content:center"><button class="btn" data-a="game" data-g="${G.type}">Play again</button><button class="btn ghost" data-a="tab" data-t="games">Other games</button></div></div>`;
+  if(s>=5)confetti();
+}
+
+function pGrammar(){
+  const u=U();
+  page().innerHTML=`<h3 class="ptitle">Grammar</h3><p class="inst">Read the rule, listen to the examples, then practise. <span class="ar">اقرئي القاعدة، استمعي للأمثلة، ثم تدرّبي.</span></p>
+   ${u.rules.map(r=>`<div class="rule"><h4>${r.h}</h4><span class="ar">${r.ar}</span>
+     ${r.ex.map(e=>`<div class="ex"><span>${esc(e)}</span><button data-a="sayt" data-t="${esc(e)}" aria-label="Listen">🔊</button></div>`).join('')}</div>`).join('')}
+   <div class="ghead">Practice <span class="ar">تدريب: اختاري الإجابة الصحيحة</span></div>
+   ${u.gq.map((q,i)=>`<div class="gq" id="gq${i}"><p>${i+1}. ${esc(q[0]).replace('___','<span class="gap" id="gp'+i+'">?</span>')}</p>
+     <div class="bub">${q[1].map((o,k)=>`<button class="qopt" data-a="gans" data-q="${i}" data-k="${k}">${esc(o)}</button>`).join('')}</div></div>`).join('')}
+   <div class="gscore" id="gscore">0 / ${u.gq.length}</div>`;
+  gramState={ok:0,done:{}};
+}
+let gramState={ok:0,done:{}};
+function gans(btn,i,k){
+  if(gramState.done[i])return;const q=U().gq[i];
+  if(k===q[2]){gramState.done[i]=true;btn.classList.add('good');document.getElementById('gp'+i).textContent=q[1][k];
+    if(!gramState.done['x'+i]){gramState.ok++;addStar()}document.getElementById('gscore').textContent=gramState.ok+' / '+U().gq.length;
+    say(q[0].replace('___',q[1][k]).replace(/^.*→\s*/,''));
+    if(Object.keys(gramState.done).filter(x=>!x.startsWith('x')).length===U().gq.length){toast(gramState.ok+' / '+U().gq.length);if(gramState.ok>=6)confetti()}}
+  else{gramState.done['x'+i]=true;btn.classList.add('no');shake(btn)}
+}
+
+function pPhrases(){
+  const p=U().phr;
+  page().innerHTML=`<h3 class="ptitle">Let's talk: ${p.t}</h3>
+   <p class="inst">Listen and say. Then use it with a friend! <span class="ar">${p.ar} — استمعي وردّدي ثم استخدميها مع صديقتك.</span></p>
+   ${p.list.map(l=>`<div class="phr"><button data-a="sayt" data-t="${esc(l[0])}" aria-label="Listen">🔊</button>
+     <span class="t"><b>${esc(l[0])}</b><span class="ar">${l[1]}</span></span></div>`).join('')}`;
+}
+
+/* challenge */
+let C=null;
+function pChallenge(){
+  const u=U(),all=words(u);const pool=shuffle(all);
+  const qs=[];
+  pool.slice(0,4).forEach(t=>qs.push({type:'mean',t,opts:shuffle([t,...pickOthers(all,t,2)])}));
+  pool.slice(4,7).forEach(t=>qs.push({type:'listen',t,opts:shuffle([t,...pickOthers(all,t,2)])}));
+  shuffle(u.gq).slice(0,3).forEach(g=>qs.push({type:'gram',g}));
+  C={qs:shuffle(qs),i:0,score:0,res:[]};
+  page().innerHTML=`<div class="win"><div class="big">🏆</div><h3>${u.name} Challenge</h3>
+   <p>10 questions. Get 8 or more to win your certificate!</p><p class="ar">10 أسئلة. أجيبي 8 أو أكثر لتحصلي على شهادة الوحدة!</p>
+   <button class="btn" data-a="cstart">Start</button></div>`;
+}
+function drawC(){
+  if(C.i>=C.qs.length)return endC();
+  const q=C.qs[C.i];let h=dots(C.qs.length,C.i,C.res);
+  if(q.type==='mean')h+=`<p class="inst" style="text-align:center">What does it mean? <span class="ar">ما معنى الكلمة؟</span></p>
+    <div class="gpic">${ic(q.t[2])}</div><div class="gword">${q.t[0]}</div>
+    <div class="opts col">${q.opts.map((o,k)=>`<button class="opt txt ar" data-a="cans" data-k="${k}">${o[1]}</button>`).join('')}</div>`;
+  else if(q.type==='listen')h+=`<button class="speaker" data-a="sayt" data-t="${esc(q.t[0])}" aria-label="Listen again">🔊</button>
+    <p class="inst" style="text-align:center">Listen and choose. <span class="ar">استمعي واختاري.</span></p>
+    <div class="opts">${q.opts.map((o,k)=>`<button class="opt" data-a="cans" data-k="${k}" aria-label="${esc(o[0])}">${ic(o[2])}</button>`).join('')}</div>`;
+  else h+=`<p class="inst" style="text-align:center">Choose the right answer. <span class="ar">اختاري الإجابة الصحيحة.</span></p>
+    <div class="gq"><p>${esc(q.g[0]).replace('___','<span class="gap">?</span>')}</p></div>
+    <div class="opts col">${q.g[1].map((o,k)=>`<button class="opt txt" data-a="cans" data-k="${k}">${esc(o)}</button>`).join('')}</div>`;
+  page().innerHTML=h;
+  if(q.type==='listen')say(q.t[0]);
+}
+function cans(btn,k){
+  const q=C.qs[C.i];if(q.lock)return;q.lock=true;
+  const ok=q.type==='gram'?k===q.g[2]:q.opts[k][0]===q.t[0];
+  C.res[C.i]=ok;
+  if(ok){C.score++;btn.classList.add('good');toast(praise())}
+  else{btn.classList.add('no');shake(btn);
+    const right=q.type==='gram'?q.g[2]:q.opts.findIndex(o=>o[0]===q.t[0]);
+    page().querySelectorAll('[data-a="cans"]')[right].classList.add('good')}
+  setTimeout(()=>{C.i++;drawC()},ok?1100:1800);
+}
+function endC(){
+  const u=U(),s=C.score;
+  if(s>=8){addStar(5);done[u.key]=true;save();confetti();
+    const d=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+    page().innerHTML=`<div class="win"><div class="big">🥇</div><h3>${s} / 10 — You did it!</h3><p class="ar">أحسنتِ! اكتبي اسمكِ لتظهر شهادتكِ.</p></div>
+     <label for="certName" class="ar" style="display:block;margin-bottom:6px">اسم الطالبة / Your name</label>
+     <input class="field" id="certName" value="${esc(sname)}" placeholder="e.g. Reem" autocomplete="off">
+     <div class="cert"><div class="st">⭐⭐⭐</div><h3>Certificate of Achievement</h3><span class="ar">شهادة إنجاز</span>
+      <div>This is to certify that</div><div class="nm" id="certOut">${esc(sname)||'&nbsp;'}</div>
+      <div>has completed <b>${u.num}: ${u.name}</b><br>with a score of <b>${s} / 10</b>.</div>
+      <span class="ar">أتمّت الطالبة تحدّي الوحدة بنجاح 🎉</span>
+      <div style="font-size:14px;margin-top:6px">${d}</div>
+      <div class="sig">T. Laila Al Shamsi</div></div>
+     <p class="inst" style="text-align:center;margin-top:10px">Take a screenshot and send it to your teacher! <span class="ar">التقطي صورة للشهادة وأرسليها للمعلمة 📸</span></p>
+     <div class="row" style="justify-content:center"><button class="btn ghost" data-a="home">All units</button></div>`;
+  }else{
+    page().innerHTML=`<div class="win"><div class="big">💪</div><h3>${s} / 10</h3>
+     <p>You need 8 to win the certificate. Practise and try again!</p><p class="ar">تحتاجين 8 للحصول على الشهادة. راجعي الكلمات وحاولي مرة أخرى!</p>
+     <div class="row" style="justify-content:center"><button class="btn" data-a="tab" data-t="challenge">Try again</button><button class="btn ghost" data-a="tab" data-t="words">Review words</button></div></div>`;
+  }
+}
+
+/* events */
+let resetArm=false;
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a,d=b.dataset;
+  if(a==='home'){S.view='home';render();scrollTo(0,0)}
+  else if(a==='open'){S={view:'unit',u:+d.u,tab:'words'};render();scrollTo(0,0)}
+  else if(a==='tab'){S.tab=d.t;render()}
+  else if(a==='sayw'){const w=words(U())[+d.i];say(w[0])}
+  else if(a==='sayt')say(d.t);
+  else if(a==='playall')playAll();
+  else if(a==='flip'){const c=document.getElementById('fcard');c.classList.toggle('flip');if(!c.classList.contains('flip'))return;say(fc.list[fc.i][0])}
+  else if(a==='fnext'){fc.i=(fc.i+1)%fc.list.length;drawCard()}
+  else if(a==='fprev'){fc.i=(fc.i-1+fc.list.length)%fc.list.length;drawCard()}
+  else if(a==='game')startGame(d.g);
+  else if(a==='ans')answer(b,+d.k);
+  else if(a==='tile')tile(b,+d.k);
+  else if(a==='gans')gans(b,+d.q,+d.k);
+  else if(a==='cstart')drawC();
+  else if(a==='cans')cans(b,+d.k);
+  else if(a==='reset'){if(!resetArm){resetArm=true;b.textContent='Tap again to reset';setTimeout(()=>{resetArm=false;b.textContent='Reset stars'},3000)}
+    else{stars=0;done={};save();resetArm=false;b.textContent='Reset stars';render()}}
+});
+document.addEventListener('input',e=>{if(e.target.id==='certName'){sname=e.target.value.slice(0,40);save();document.getElementById('certOut').innerHTML=esc(sname)||'&nbsp;'}});
+render();
+</script>
+
+
+</body></html>
